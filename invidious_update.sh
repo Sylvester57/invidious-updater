@@ -1393,7 +1393,7 @@ install_invidious() {
   echo ""
   echo "Let's go through some configuration options."
   echo ""
-  if [[ "$free" -le 2048  ]]; then
+  if [[ "$free" -le 48  ]]; then
     echo -e "${ORANGE}Advice: Free memory: $free MB is less than recommended to build Invidious${NC}"
     # Let the user enter swap options:
     while [[ $SWAP_OPTIONS != "y" && $SWAP_OPTIONS != "n" ]]; do
