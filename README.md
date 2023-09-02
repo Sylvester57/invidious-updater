@@ -43,92 +43,12 @@
 
 ## Installation
 
-If you're looking for a quick way to install, check out [Invidious-Installer](https://github.com/tmiland/invidious-installer)
- ***This is now integrated into the update script***
-
-#### Download and execute the script:
-
-For latest release
-
-```bash
-curl -s https://api.github.com/repos/tmiland/Invidious-Updater/releases/latest \
-| grep "browser_download_url.*sh" \
-| cut -d : -f 2,3 \
-| tr -d \" \
-| wget -qi -
-```
-
-```bash
-$ chmod +x invidious_update.sh
-$ ./invidious_update.sh
-```
-Or directly
-
-```bash
-$ curl -sSL https://github.com/tmiland/Invidious-Updater/releases/latest/download/invidious_update.sh | bash
-```
-
 For master branch
 ```bash
-$ wget https://github.com/tmiland/Invidious-Updater/raw/master/invidious_update.sh
-$ chmod +x invidious_update.sh
-$ ./invidious_update.sh
+wget https://github.com/Sylvester57/Invidious-Updater/raw/master/invidious_update.sh
+chmod +x invidious_update.sh
+./invidious_update.sh
 ```
-### Repository
-
- ```shell
- $ sudo curl -SsL -o /etc/apt/sources.list.d/tmiland.list https://deb.tmiland.com/debian/tmiland.list
- ```
-
- ```shell
- $ curl -SsL https://deb.tmiland.com/debian/KEY.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/tmiland-archive-keyring.gpg >/dev/null
- ```
-
- ```shell
- $ sudo apt update
- ```
- 
- ```shell
- $ sudo apt install invidious-updater
- ```
- 
-- Run script with ```invidious_update ```
- 
-- ***Only for Debian/Ubuntu/LinuxMint/PureOS***
-
-#### Check for script update (Default "no")
-
- ```bash
- 
- $ ./invidious_update.sh -u
- 
- ```
- 
- #### Update Invidious via Cron
-
-**Select option 2 once to manually set GitHub Credentials**
-
-```bash
-
-$ /path/to/script/invidious_update.sh -c
-
-```
-Add job to cron:
-```bash
-$ crontab -e
-```
-```bash
-@daily bash /path/to/script/invidious_update.sh -c > /dev/null 2>&1 # Automated Invidious Update
-```
-
-***Note: you will be prompted to enter root password***
-
-If root password is not set, type:
-
-```bash
-sudo passwd root
-```
-
 
 ## Usage
 
